@@ -45,8 +45,8 @@ apply plugin: 'maven-publish-auth'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
-group = 'org.hibernate.common'
-version = '5.0.1.Final'
+group = 'org.hibernate5.common'
+version = '5.0.1.0-1-odl'
 
 buildDir = "target"
 
@@ -98,13 +98,13 @@ project.getConvention().findPlugin( JavaPluginConvention.class ).sourceSets.each
 
 // Project version injection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 versionInjection {
-    into( 'org.hibernate.annotations.common.Version', 'getVersionString' )
+    into( 'org.hibernate5.annotations.common.Version', 'getVersionString' )
 }
 
 jar {
     manifest = osgiManifest { manifest ->
         mainAttributes(
-                'Main-Class': 'org.hibernate.annotations.common.Version'
+                'Main-Class': 'org.hibernate5.annotations.common.Version'
         )
 
         classesDir = sourceSets.main.output.classesDir
